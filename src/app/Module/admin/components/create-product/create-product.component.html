@@ -1,0 +1,148 @@
+<h1>Add new product</h1>
+<form [formGroup]="productForm" (ngSubmit)="submitForm()">
+
+    <div class="table">
+    
+        <mat-form-field class="w-full">
+        
+            <mat-label>Title</mat-label>
+            <input matInput formControlName="title" required text>
+        
+            <mat-error *ngIf="productForm.controls['title'].hasError
+            ('required')">Title Is required</mat-error>
+        
+        </mat-form-field>
+        <mat-form-field class="w-full">
+        
+            <mat-label>Description</mat-label>
+            <input matInput formControlName="description" required text>
+        
+            <mat-error *ngIf="productForm.controls['description'].hasError
+            ('required')">Description Is required</mat-error>
+        
+        </mat-form-field>
+        <mat-form-field class="w-full">
+        
+            <mat-label>Price</mat-label>
+            <input matInput formControlName="price" required number>
+        
+            <mat-error *ngIf="productForm.controls['price'].hasError
+            ('required')">Price Is required</mat-error>
+        
+        </mat-form-field>
+        <mat-form-field class="w-full">
+        
+            <mat-label>DiscountedPrice</mat-label>
+            <input matInput formControlName="discountedPrice" required number>
+        
+            <mat-error *ngIf="productForm.controls['price'].hasError
+            ('required')">DiscountedPrice Is required</mat-error>
+        
+        </mat-form-field>
+        <mat-form-field class="w-full">
+        
+            <mat-label>DiscountPersent</mat-label>
+            <input matInput formControlName="discountPersent" required number>
+        
+            <mat-error *ngIf="productForm.controls['discountPersent'].hasError
+            ('required')">DiscountPersent Is required</mat-error>
+        
+        </mat-form-field>
+        <mat-form-field class="w-full">
+        
+            <mat-label>Quantity</mat-label>
+            <input matInput formControlName="quantity" required number>
+        
+            <mat-error *ngIf="productForm.controls['quantity'].hasError
+            ('required')">Quentity Is required</mat-error>
+        
+        </mat-form-field>
+        <mat-form-field class="w-full">
+        
+            <mat-label>Brand</mat-label>
+            <input matInput formControlName="brand" required text>
+        
+            <mat-error *ngIf="productForm.controls['brand'].hasError
+            ('required')">Quentity Is required</mat-error>
+        
+        </mat-form-field>
+        <mat-form-field class="w-full">
+        
+            <mat-label>Color</mat-label>
+            <input matInput formControlName="color" required text>
+        
+            <mat-error *ngIf="productForm.controls['color'].hasError
+            ('required')">Quentity Is required</mat-error>
+        
+        </mat-form-field>
+    </div>
+    <h2>Size</h2>
+    <form [formGroup]="sizeForm" (ngSubmit)="submitForm()">
+        <div class="table">
+            <mat-form-field class="w-full">
+            
+                <mat-label>S</mat-label>
+                <input matInput formControlName="s" required text>
+            
+                <mat-error *ngIf="sizeForm.controls['s'].hasError
+                ('required')">Quentity Is required</mat-error>
+            
+            </mat-form-field>
+            <mat-form-field class="w-full">
+            
+                <mat-label>M</mat-label>
+                <input matInput formControlName="m" required text>
+            
+                <mat-error *ngIf="sizeForm.controls['m'].hasError
+                ('required')">Quentity Is required</mat-error>
+            
+            </mat-form-field>
+            <mat-form-field class="w-full">
+            
+                <mat-label>L</mat-label>
+                <input matInput formControlName="l" required text>
+            
+                <mat-error *ngIf="sizeForm.controls['l'].hasError
+                ('required')">Quentity Is required</mat-error>
+            
+            </mat-form-field>
+        </div>
+    </form>
+    <mat-form-field class="w-full">
+    
+        <mat-label>imageUrl</mat-label>
+        <input matInput formControlName="imageUrl" required text>
+    
+        <mat-error *ngIf="productForm.controls['imageUrl'].hasError
+        ('required')">Quentity Is required</mat-error>
+    
+    </mat-form-field>
+    <mat-form-field class="w-full">
+    
+        <mat-label>topLavelCategory</mat-label>
+        <input matInput formControlName="topLavelCategory" required text>
+    
+        <mat-error *ngIf="productForm.controls['topLavelCategory'].hasError
+        ('required')">Quentity Is required</mat-error>
+    
+    </mat-form-field>
+    <mat-form-field class="w-full">
+    
+        <mat-label>secondLavelCategory</mat-label>
+        <input matInput formControlName="secondLavelCategory" required text>
+    
+        <mat-error *ngIf="productForm.controls['secondLavelCategory'].hasError
+        ('required')">Quentity Is required</mat-error>
+    
+    </mat-form-field>
+    <mat-form-field class="w-full">
+    
+        <mat-label>thirdLavelCategory</mat-label>
+        <input matInput formControlName="thirdLavelCategory" required text>
+    
+        <mat-error *ngIf="productForm.controls['thirdLavelCategory'].hasError
+        ('required')">Quentity Is required</mat-error>
+    
+    </mat-form-field>
+    <button mat-raised-button color="primary" [disabled]="!formValid">Save</button>
+</form>

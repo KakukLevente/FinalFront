@@ -1,0 +1,80 @@
+<div class="py-20 text-white px-5 lg:px-20">
+
+    <h1 class="text-lg font-bold text-center py-10">My Orders</h1>
+
+    <div class="lg:grid grid-cols-4 gap-5">
+
+        <div class="col-span-1">
+
+            <div class="">
+
+                <div *ngFor="let option of orderFilter">
+
+                    <div class="flex items-center">
+
+                        <mat-checkbox [id]="option.value" [value]="option.value">
+
+                            <span class="text-sm text-gray-500">
+                                {{option.label}}
+                            </span>
+
+                        </mat-checkbox>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            
+
+        </div>
+
+        <div class="col-span-3 space-y-5">
+
+            <div class="space-y-5" *ngFor="let order of orders">
+                <div class="box">
+
+                    <div class="grid grid-cols-6">
+                
+                        <div class="col-span-3">
+                            <div class="flex items-center w-full">
+                
+                                <img class="w-[5rem] h-[5rem] object-cover object-top"
+                                    src="{{order.orderItems[0].product.imageUrl}}"
+                                    alt="">
+                
+                                <div class="ml-5">
+                                    <div *ngFor="let item of order.orderItems">
+                                        <p class="font-semibold text-lg">{{item.product.title}}</p>
+                                        <p class="text-sm text-gray-400">{{item.discountedPrice}}</p>
+                                        <p class="text-sm text-gray-400">{{item.quantity}}</p>
+                
+                                    </div>
+                
+                                </div>
+                            </div>
+                        </div>
+                
+                
+                
+                        <div class="col-span-1">
+                
+                            <p class="font-semibold text-lg">{{order.totalDiscountedPrice}} $</p>
+                            
+                
+                        </div>
+                
+                        <div class="col-span-2">
+                            <p>Status:</p>
+                            <p class="font-semibold text-lg">{{order.orderStatus}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

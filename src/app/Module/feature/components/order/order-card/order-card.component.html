@@ -1,0 +1,37 @@
+<div class="box">
+
+    <div class="grid grid-cols-6">
+
+        <div class="col-span-3">
+            <div class="flex items-center w-full">
+
+                <img class="w-[5rem] h-[5rem] object-cover object-top"
+                    src="https://img.kwcdn.com/product/Fancyalgo/VirtualModelMatting/55835476f83d9f1ca66edc0ab1097bff.jpg?imageView2/2/w/800/q/70"
+                    alt="">
+
+                <div class="ml-5">
+                    <div *ngFor="let item in order.orderItems">
+                        <p class="font-semibold text-lg">{{item.product.title}}</p>
+                        <p class="text-sm text-gray-400">{{item.discountedPrice}}</p>
+                        <p class="text-sm text-gray-400">{{item.quantity}}</p>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="col-span-1">
+
+            <p class="font-semibold text-lg">{{order.totalDiscountedPrice}}</p>
+            
+
+        </div>
+
+        <div class="col-span-2">
+            <p class="font-semibold text-lg">{{order.status}}</p>
+        </div>
+    </div>
+</div>

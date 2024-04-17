@@ -1,0 +1,9 @@
+<h1>Manage Users</h1>
+
+<div class="table" *ngFor="let customer of customers"> 
+    <p>{{customer.firstName + " "  + customer.lastName}}</p>
+    <p>{{customer.email}}</p>
+    <button mat-raised-button color="primary" (click)="deleteCustomer(customer)">Delete</button>
+    <button mat-raised-button color="primary" *ngIf="customer.role != 'ADMIN'" (click)="updateCustomer(customer)">Make Admin</button>
+    <button mat-raised-button color="primary" *ngIf="customer.role == 'ADMIN'" (click)="updateCustomer(customer)">Demote Admin</button>
+</div>
